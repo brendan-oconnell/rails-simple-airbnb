@@ -1,0 +1,21 @@
+<h2>Simple AirBnB</h2>
+<h1>All our Flats <i class="fa-thin fa-dollar-sign"></i></h1>
+<p><%= fa_stacked_icon "twitter", base: "square-o" %></p>
+All 4 flats.
+<div class="cards">
+  <% @flats.each do |flat| %>
+
+      <div class="card-trip">
+        <img src="https://picsum.photos/200" />
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= flat.name %></h2>
+          <p><%= flat.address %></p>
+        </div>
+        <h2 class="card-trip-pricing"><i class="fa-thin fa-dollar-sign"></i><%= flat.price_per_night %></h2>
+      </div>
+    </div>
+
+  <% end %>
+</div>
+<button type="button" class="btn btn-default"><%= link_to("Create New Flat", new_flat_path) %></button>
